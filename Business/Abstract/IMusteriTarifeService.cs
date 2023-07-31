@@ -15,7 +15,7 @@ namespace Business.Abstract
 
         IDataResult<List<MusteriTarife>> GetByUnitPrice(decimal min, decimal max);
 
-        IDataResult<MusteriTarife> GetById(int productId);
+        IDataResult<MusteriTarife> GetById(int musteriTarifeId);
         IResult Add(MusteriTarife musteriTarife);
         IResult Update(MusteriTarife musteriTarife);
         IResult Delete(MusteriTarife musteriTarife);

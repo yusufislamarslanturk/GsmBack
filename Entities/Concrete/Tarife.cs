@@ -11,7 +11,7 @@ namespace Entities.Concrete
     {
         public int tarifeID { get; set; }
         public string tarifeAdi { get; set; }
-        public double tarifeUcreti { get; set; }
+        public decimal tarifeUcreti { get; set; }
         public int tarifeInternet { get; set; }
         public int tarifeSms { get; set; }
         public int tarifeDk { get; set; }

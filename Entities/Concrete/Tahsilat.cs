@@ -13,7 +13,7 @@ namespace Entities.Concrete
         public int tarifeId { get; set; }
         public int faturaId { get; set; }
         public DateTime tahsilTarihi { get; set; }
-        public double tarifeUcreti { get; set; }
+        public decimal tarifeUcreti { get; set; }
         public Int64 TC { get; set; }
     }
 }

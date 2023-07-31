@@ -21,7 +21,8 @@ namespace Business.Concrete
         }
         public IResult Add(MusteriTarife musteriTarife)
         {
-            throw new NotImplementedException();
+            _musteriTarifeDal.Add(musteriTarife);
+            return new SuccessResult("eklendi");
         }
 
         public IResult AddTransactionalTest(MusteriTarife musteriTarife)
@@ -31,7 +32,9 @@ namespace Business.Concrete
 
         public IResult Delete(MusteriTarife musteriTarife)
         {
-            throw new NotImplementedException();
+            _musteriTarifeDal.Delete(musteriTarife);
+            return new SuccessResult("silindi");
+
         }
 
         public IDataResult<List<MusteriTarife>> GetAll()
@@ -41,12 +44,14 @@ namespace Business.Concrete
 
         public IDataResult<List<MusteriTarife>> GetAllByCategoryId(int id)
         {
-            throw new NotImplementedException();
+            var result = _musteriTarifeDal.GetAll(c => c.tarifeId == id);
+            return new SuccessDataResult<List<MusteriTarife>>(result,"id ye göre ");
         }
 
-        public IDataResult<MusteriTarife> GetById(int productId)
+        public IDataResult<MusteriTarife> GetById(int musteriTarifeId)
         {
-            throw new NotImplementedException();
+            var result = _musteriTarifeDal.Get(c => c.musteriTarifeId ==musteriTarifeId);
+            return new SuccessDataResult<MusteriTarife>("ıd ye göre listeleme yapıldı");
         }
 
         public IDataResult<List<MusteriTarife>> GetByUnitPrice(decimal min, decimal max)
@@ -56,7 +61,8 @@ namespace Business.Concrete
 
         public IResult Update(MusteriTarife musteriTarife)
         {
-            throw new NotImplementedException();
+            _musteriTarifeDal.Update(musteriTarife);
+            return new SuccessResult("güncellendi");
         }
     }
 }

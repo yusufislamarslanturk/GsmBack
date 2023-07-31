@@ -20,7 +20,8 @@ namespace Business.Concrete
         }
         public IResult Add(Musteri musteri)
         {
-            throw new NotImplementedException();
+            _musteriDal.Add(musteri);
+            return new SuccessResult("musteri eklendi");
         }
 
         public IResult AddTransactionalTest(Musteri musteri)
@@ -30,7 +31,8 @@ namespace Business.Concrete
 
         public IResult Delete(Musteri musteri)
         {
-            throw new NotImplementedException();
+            _musteriDal.Delete(musteri);
+            return new SuccessResult("müşteri eklendi");
         }
 
         public IDataResult<List<Musteri>> GetAll()
@@ -40,12 +42,14 @@ namespace Business.Concrete
 
         public IDataResult<List<Musteri>> GetAllByCategoryId(int id)
         {
-            throw new NotImplementedException();
+            var result = _musteriDal.GetAll(c => c.musteriId == id);
+            return new SuccessDataResult<List<Musteri>>(result,"Müşteriler Id ye göre listelendi");
         }
 
         public IDataResult<Musteri> GetById(int musteriId)
         {
-            throw new NotImplementedException();
+            var result = _musteriDal.Get(c => c.musteriId == musteriId);
+            return new SuccessDataResult<Musteri>(result);
         }
 
         public IDataResult<List<Musteri>> GetByUnitPrice(decimal min, decimal max)
@@ -55,7 +59,8 @@ namespace Business.Concrete
 
         public IResult Update(Musteri musteri)
         {
-            throw new NotImplementedException();
+             _musteriDal.Update(musteri);
+            return new SuccessResult("Müşteriler güncellendi");
         }
     }
 }

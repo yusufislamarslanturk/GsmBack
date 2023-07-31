@@ -20,7 +20,8 @@ namespace Business.Concrete
         }
         public IResult Add(Fatura fatura)
         {
-            throw new NotImplementedException();
+            _faturaDal.Add(fatura);
+            return new SuccessResult("Fatura eklendi");
         }
 
         public IResult AddTransactionalTest(Fatura fatura)
@@ -30,7 +31,9 @@ namespace Business.Concrete
 
         public IResult Delete(Fatura fatura)
         {
-            throw new NotImplementedException();
+            _faturaDal.Delete(fatura);
+            return new SuccessResult("fatura silindi");
+
         }
 
         public IDataResult<List<Fatura>> GetAll()
@@ -40,12 +43,15 @@ namespace Business.Concrete
 
         public IDataResult<List<Fatura>> GetAllByCategoryId(int id)
         {
-            throw new NotImplementedException();
+            var result = _faturaDal.GetAll(c => c.faturaId == id);
+            return new SuccessDataResult<List<Fatura>>(result);
         }
 
         public IDataResult<Fatura> GetById(int faturaId)
         {
-            throw new NotImplementedException();
+
+            var result = _faturaDal.Get(c => c.faturaId == faturaId);
+            return new SuccessDataResult<Fatura>(result, "ıd ye göre listelendi");
         }
 
         public IDataResult<List<Fatura>> GetByUnitPrice(decimal min, decimal max)
@@ -55,7 +61,8 @@ namespace Business.Concrete
 
         public IResult Update(Fatura fatura)
         {
-            throw new NotImplementedException();
+            _faturaDal.Update(fatura);
+            return new SuccessDataResult<List<Fatura>>("Fatura güncellendi");
         }
     }
 }

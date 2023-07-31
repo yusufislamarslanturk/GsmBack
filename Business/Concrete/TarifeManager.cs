@@ -34,7 +34,9 @@ namespace Business.Concrete
 
         public IResult Delete(Tarife tarife)
         {
-            throw new NotImplementedException();
+            _tarifeDal.Delete(tarife);
+            return new SuccessResult("tarife silindi");
+
         }
 
         public IDataResult<List<Tarife>> GetAll()
@@ -44,22 +46,25 @@ namespace Business.Concrete
 
         public IDataResult<List<Tarife>> GetAllByCategoryId(int id)
         {
-            throw new NotImplementedException();
+            var result = _tarifeDal.GetAll(c => c.tarifeID == id);
+            return new SuccessDataResult<List<Tarife>>(result);
         }
 
         public IDataResult<Tarife> GetById(int tarifeId)
         {
-            throw new NotImplementedException();
+            var result = _tarifeDal.Get(c => c.tarifeID == tarifeId);
+            return new SuccessDataResult<Tarife>(result);
         }
 
         public IDataResult<List<Tarife>> GetByUnitPrice(decimal min, decimal max)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Tarife>>(_tarifeDal.GetAll(p => p.tarifeUcreti >= min && p.tarifeUcreti <= max));
         }
 
         public IResult Update(Tarife tarife)
         {
-            throw new NotImplementedException();
+            _tarifeDal.Update(tarife);
+            return new SuccessResult("tarife güncellendi");
         }
     }
 }
