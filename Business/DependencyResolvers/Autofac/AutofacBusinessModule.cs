@@ -23,12 +23,29 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-           
+         
 
-            builder.RegisterType<AuthManager>().As<IAuthService>();
-            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+            builder.RegisterType<TahsilatManager>().As<ITahsilatService>();
+            builder.RegisterType<EfTahsilatDal>().As<ITahsilatDal>().SingleInstance();
 
-          
+            builder.RegisterType<FaturaManager>().As<IFaturaService>();
+            builder.RegisterType<EfFaturaDal>().As<IFaturaDal>().SingleInstance();
+
+            builder.RegisterType<MusteriManager>().As<IMusteriService>();
+            builder.RegisterType<EfMusteriDal>().As<IMusteriDal>().SingleInstance();
+
+            builder.RegisterType<MusteriTarifeManager>().As<IMusteriTarifeService>();
+            builder.RegisterType<EfMusteriTarifeDal>().As<IMusteriTarifeDal>().SingleInstance();
+
+            builder.RegisterType<TarifeManager>().As<ITarifeService>();
+            builder.RegisterType<EfTarifeDal>().As<ITarifeDal>().SingleInstance();
+
+
+
+            //builder.RegisterType<AuthManager>().As<IAuthService>();
+            //builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+
 
 
 

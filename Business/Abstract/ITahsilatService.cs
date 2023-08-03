@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    interface ITahsilatService
+    public interface ITahsilatService
     {
         IDataResult<List<Tahsilat>> GetAll();
         IDataResult<List<Tahsilat>> GetAllByCategoryId(int id);

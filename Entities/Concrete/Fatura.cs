@@ -12,7 +12,7 @@ namespace Entities.Concrete
         public int faturaId { get; set; }
         public int tarifeId { get; set; }
         public int musteriTarifeId { get; set; }
-        public double donemUcreti { get; set; }
+        public decimal donemUcreti { get; set; }
         public string donemAdi { get; set; }
         public  bool odendiMi { get; set; }
         public Int64 TC { get; set; }
