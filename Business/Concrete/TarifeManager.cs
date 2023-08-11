@@ -46,13 +46,13 @@ namespace Business.Concrete
 
         public IDataResult<List<Tarife>> GetAllByCategoryId(int id)
         {
-            var result = _tarifeDal.GetAll(c => c.tarifeID == id);
+            var result = _tarifeDal.GetAll(c => c.tarifeId == id);
             return new SuccessDataResult<List<Tarife>>(result);
         }
 
         public IDataResult<Tarife> GetById(int tarifeId)
         {
-            var result = _tarifeDal.Get(c => c.tarifeID == tarifeId);
+            var result = _tarifeDal.Get(c => c.tarifeId == tarifeId);
             return new SuccessDataResult<Tarife>(result);
         }
 

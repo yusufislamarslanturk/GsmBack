@@ -29,6 +29,10 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<MusteriTarife> musteriTarife { get; set; }
         public DbSet<Musteri> musteri { get; set; }
         public DbSet<Fatura> fatura { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+
 
     }
 }

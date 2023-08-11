@@ -15,6 +15,6 @@ namespace Entities.Concrete
         public decimal donemUcreti { get; set; }
         public string donemAdi { get; set; }
         public  bool odendiMi { get; set; }
-        public Int64 TC { get; set; }
+        public string TC { get; set; }
     }
 }

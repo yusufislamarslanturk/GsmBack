@@ -9,7 +9,7 @@ namespace Entities.Concrete
 {
     public class Tarife:IEntity
     {
-        public int tarifeID { get; set; }
+        public int tarifeId { get; set; }
         public string tarifeAdi { get; set; }
         public decimal tarifeUcreti { get; set; }
         public int tarifeInternet { get; set; }

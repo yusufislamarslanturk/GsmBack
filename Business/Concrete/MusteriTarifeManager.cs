@@ -51,7 +51,7 @@ namespace Business.Concrete
         public IDataResult<MusteriTarife> GetById(int musteriTarifeId)
         {
             var result = _musteriTarifeDal.Get(c => c.musteriTarifeId ==musteriTarifeId);
-            return new SuccessDataResult<MusteriTarife>("ıd ye göre listeleme yapıldı");
+            return new SuccessDataResult<MusteriTarife>(result,"ıd ye göre listeleme yapıldı");
         }
 
         public IDataResult<List<MusteriTarife>> GetByUnitPrice(decimal min, decimal max)

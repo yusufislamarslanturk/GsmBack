@@ -12,8 +12,8 @@ namespace Entities.Concrete
         public int musteriId { get; set; }
         public string ad { get; set; }
         public string soyad { get; set; }
-        public Int64 TC { get; set; }
-        public Int64 GSMno { get; set; }
+        public string TC { get; set; }
+        public string GSMno { get; set; }
         public string Email { get; set; }
 
     }

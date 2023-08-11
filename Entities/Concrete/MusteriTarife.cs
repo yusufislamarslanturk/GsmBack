@@ -13,7 +13,7 @@ namespace Entities.Concrete
         public int musteriTarifeId { get; set; }
         public DateTime baslangic { get; set; }
         public DateTime bitis { get; set; }
-        public Int64 TC { get; set; }
+        public int musteriId { get; set; }
 
     }
 }
