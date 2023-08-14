@@ -2,6 +2,7 @@
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,11 @@ namespace Business.Concrete
         public IDataResult<List<MusteriTarife>> GetByUnitPrice(decimal min, decimal max)
         {
             throw new NotImplementedException();
+        }
+
+        public IDataResult<List<MusteriTarifeDTO>> GetMusteriTarifeDetails()
+        {
+            return new SuccessDataResult<List<MusteriTarifeDTO>>(_musteriTarifeDal.GetMusteriDetails());
         }
 
         public IResult Update(MusteriTarife musteriTarife)

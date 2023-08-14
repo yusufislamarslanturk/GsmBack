@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,6 @@ namespace Business.Abstract
         IResult Update(Musteri musteri);
         IResult Delete(Musteri musteri);
         IResult AddTransactionalTest(Musteri musteri);
+       
     }
 }
